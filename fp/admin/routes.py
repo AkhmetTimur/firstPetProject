@@ -10,7 +10,6 @@ admin = Blueprint('admin',__name__)
 def administrator(func):
     #checks whether current_user is admin or not, abort 404 if not 
     def wrapper(*args,**kwargs):
-        #user = User.query.filter_by(id=current_user.id).first()
         if  current_user.is_admin:
             return func(*args,**kwargs)
         else:
@@ -42,7 +41,7 @@ def delete_user(user_id):
 @administrator
 def makeadmin_user(user_id):
     user = User.query.filter_by(id=int(user_id)).first()
-    if user.username == "admin":
+    if user.username == "admin" or user.id==current_user.id:
         abort(404)
     flag = not(user.is_admin)
     user.is_admin = flag
