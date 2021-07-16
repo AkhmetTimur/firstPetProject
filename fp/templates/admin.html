@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    {% for user in users %}
+        {% if user.username=="admin" %}
+            {% continue %}
+        {% endif %}
+
+        <p>{{ user }}, is admin: {{user.is_admin}} </p> <a href="{{url_for('admin.delete_user',user_id = user.id)}}">Delete user</a>
+
+    {% endfor %}
+</body>
+</html>

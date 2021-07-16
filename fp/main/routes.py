@@ -4,6 +4,8 @@ from fp.main.forms import PostForm
 from fp.models import Post
 from fp import db
 
+
+
 main = Blueprint('main',__name__)
 
 @main.route('/', methods=["GET","POST"])
