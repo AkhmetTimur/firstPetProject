@@ -12,8 +12,12 @@
         {% if user.username=="admin" %}
             {% continue %}
         {% endif %}
-
-        <p>{{ user }}, is admin: {{user.is_admin}} </p> <a href="{{url_for('admin.delete_user',user_id = user.id)}}">Delete user</a>
+        {% if user.is_admin %}
+        <p>{{ user }}, is admin: {{user.is_admin}} </p> <a href="{{url_for('admin.makeadmin_user',user_id = user.id)}}">Unmake admin</a>
+        {% else %}
+        <p>{{ user }}, is admin: {{user.is_admin}} </p> <a href="{{url_for('admin.makeadmin_user',user_id = user.id)}}">Make admin</a>
+        {% endif %}
+        <a href="{{url_for('admin.delete_user',user_id = user.id)}}">Delete user</a>
 
     {% endfor %}
 </body>
