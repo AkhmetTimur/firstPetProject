@@ -19,6 +19,7 @@ def create_app(config_class=Config):
     #create admin user---------------
     from fp.models import User
     with app.app_context():
+        db.create_all()
         if not User.query.filter_by(username='admin').first():
             hashed_password=bcrypt.generate_password_hash(app.config['PASSWORD']).decode('utf-8')
             email = app.config['EMAIL']

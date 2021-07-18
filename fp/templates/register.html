@@ -4,9 +4,16 @@
 
     <form method = "POST" action ="">
         {{ form.csrf_token }}
+        Username
         {{form.username}}
+        <br>
+        Email
         {{form.email}}
+        <br>
+        Password
         {{form.password}}
+        <br>
+        Confirm password
         {{form.confirm_password}}
         {{form.submit()}}
     </form>
