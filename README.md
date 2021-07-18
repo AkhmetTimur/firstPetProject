@@ -16,6 +16,7 @@
 ## General Information
 - It's easy to lose weight when you are tracking changes
 - it's my first project on github
+- Based on Flask + SQLAlchemy (sqlite)
 
 
 ## Features
