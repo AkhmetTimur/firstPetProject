@@ -27,12 +27,9 @@ SQLAlchemy to access the database, one to many relationship (user -> weights)
 
 
 ## Screenshots
-![Example screenshot] Admin page (./img/admin_panel.png)
-Main page
+![Example screenshot](./img/admin_panel.png)
 ![Example screenshot](./img/main_page.png)
-Profile page
 ![Example screenshot](./img/profile_page.png)
-Registration page
 ![Example screenshot](./img/register_page.png)
 
 
