@@ -14,7 +14,7 @@
 
 
 ## General Information
-- It's easy to lose weoght when
+- It's easy to lose weight when you are tracking changes
 - it's my first project on github
 
 
@@ -27,9 +27,13 @@ SQLAlchemy to access the database, one to many relationship (user -> weights)
 
 
 ## Screenshots
-![Example screenshot](./img/admin_panel.png)
+Admin panel
+![Example screenshot] (./img/admin_panel.png)
+Main page
 ![Example screenshot](./img/main_page.png)
+Profile page
 ![Example screenshot](./img/profile_page.png)
+Registration page
 ![Example screenshot](./img/register_page.png)
 
 
@@ -43,7 +47,7 @@ username is admin, cannot be deleted
 
 
 ## Usage
-Once account is created, you can add weight and date (YEAR-MONTH-DAY)
+Once account is created, you can add weight and date (YEAR-MONTH-DAY).
 Go to profile and check the table and graphic
 
 ## Project Status
