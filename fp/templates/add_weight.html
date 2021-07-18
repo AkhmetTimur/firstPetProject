@@ -2,13 +2,12 @@
 
 {% block content %}
 
+    
     <form method = "POST" action ="">
         {{ form.csrf_token }}
-        {{form.username}}
-        {{form.email}}
-        {{form.password}}
-        {{form.confirm_password}}
+        {{form.weight_date}}
+        {{form.weight}}
         {{form.submit()}}
     </form>
-    
-    {% endblock%}
+
+{% endblock %}

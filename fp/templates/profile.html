@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="row">
+    <div class="col-md-6">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for weight in weights %}
+          <tr>
+            <th scope="row">{{ weight.id}}</th>
+            <td>{{weight.weight_date}} </td>
+            <td>{{weight.weight}}</td>
+            <td><a href="{{ url_for('weight.delete', weight_id = weight.id) }}">Delete</a></td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+      </div>
+      <div class="col-md-6">
+        <img src={{url}} alt="Chart" height="auto" width="100%">
+      </div>
+      </div>
+      </div>
+
+
+{% endblock %}

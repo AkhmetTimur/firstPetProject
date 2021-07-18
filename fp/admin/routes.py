@@ -1,4 +1,3 @@
-from logging import log
 from flask import Blueprint, render_template, abort, redirect
 from flask.helpers import url_for
 from flask_login import login_required, current_user

@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-    {% for post in posts %}
-        <p>{{ post }} </p>
-    {% endfor %}
-    <form method = "POST" action ="">
-        {{ form.csrf_token }}
-        {{form.title}}
-        {{form.content}}
-        {{form.submit()}}
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="text-center"><h2> Tips To Lose Weight</h2></div>
+<h5>1. Do not skip breakfast </h5>
+<p>Skipping breakfast will not help you lose weight. </p>
+<h5>2. Eat regular meals</h5>
+<p>Eating at regular times during the day helps burn calories at a faster rate.</p>
+<h5>3. Eat plenty of fruit and veg</h5>
+<p>Fruit and veg are low in calories and fat, and high in fibre – 3 essential ingredients for successful weight loss.</p>
+<h5>4. Get more active</h5>
+<p>Being active is key to losing weight and keeping it off.</p>
+<h5>5. Drink plenty of water</h5>
+<p>You can end up consuming extra calories when a glass of water is really what you need.</p>
+
+    {% endblock %}

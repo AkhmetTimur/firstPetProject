@@ -1,10 +1,15 @@
-from flask import Blueprint, request, render_template, redirect, url_for
-from flask_login import current_user, login_user,  logout_user
+from flask import Blueprint, request, render_template, redirect, url_for,current_app
+from flask_login import current_user, login_user,  logout_user, login_required
 from fp import bcrypt, db
-from fp.models import User
+from fp.models import User, Weight
 from fp.user.forms import RegisterForm, LoginForm
+from fp.user.utils import plot
+
+
 
 user = Blueprint('user',__name__)
+
+
 
 @user.route('/register', methods=["GET","POST"])
 def register():
@@ -37,5 +42,17 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+@user.route('/profile')
+@login_required
+def profile():
+    weights = Weight.query.order_by(Weight.weight_date.desc()).filter_by(user_id=current_user.id).all()
+    userdate,userweight=[],[]
+    for weight in weights:
+        userdate.append(weight.weight_date)
+        userweight.append(weight.weight)
+    result = plot(current_user.id,userdate,userweight)
+    path = url_for('static',filename='images/'+ result)
+    return render_template('profile.html', weights=weights,url=path)
         
 

@@ -31,9 +31,11 @@ def create_app(config_class=Config):
     from fp.main.routes import main
     from fp.user.routes import user
     from fp.admin.routes import admin
+    from fp.weight.routes import weight
     app.register_blueprint(main)
     app.register_blueprint(user)
     app.register_blueprint(admin)
+    app.register_blueprint(weight)
 
     #to use "{% continue %} " in templates
     app.jinja_env.add_extension('jinja2.ext.loopcontrols') 
